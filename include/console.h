@@ -5,7 +5,7 @@
 
 #define TAG_MAX_LENGTH		7
 
-class Console : public Serial {
+class Console : public HardwareSerial {
 	private:
 		uint8_t _max_tag_length;
 	public:
