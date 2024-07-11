@@ -16,11 +16,28 @@
 #define LOG_ORNG        "\033[38;5;214m"
 #define LOG_PURP        "\033[38;5;91m"
 
+// Line style -------------------------
+typedef enum {
+	DOTTED = 0,			// ...
+	DASHED,				// ---
+	DOUBLE_DASHED,		// ===
+	LINE,				// ___
+	WAVE,				// ~~~
+	HASH,				// ###
+	ASTERISK,			// ***
+} style_t;
+
+static const line_char[] = {
+	'.', '-', '=', '_', '~', '#', '*'
+};
+
 class Console : public HardwareSerial {
 	private:
 		uint8_t _max_tag_length;
 	public:
 		Console(void);
+		void line(style_t style, uint8_t length);
+		void line(style_t style, const char * color, uint8_t length);
 		void writeTag(const char * tag);
 		void log(const char * tag, String message);
 		void success(const char * tag, String message);

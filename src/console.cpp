@@ -6,6 +6,20 @@ Console::Console(void) : HardwareSerial(0) {
 	_max_tag_length = TAG_MAX_LENGTH;
 }
 
+void Console::line(style_t style, uint8_t length) {
+	char chr = line_char[style];
+	char line_str[length];
+	memset(line_str, chr, length);
+	println(line_str);
+}
+
+void Console::line(style_t style, const char * color, uint8_t length) {
+	print(F(color));
+	line(style, length);
+	print(F(LOG_NORM));
+}
+
+
 void Console::writeTag(const char * tag) {
 	char pad_str[_max_tag_length + 6];
 	strcpy(pad_str, "[ ");
