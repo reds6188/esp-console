@@ -8,7 +8,7 @@ Console::Console(void) : HardwareSerial(0) {
 
 void Console::line(style_t style, uint8_t length) {
 	char chr = line_char[style];
-	char line_str[length];
+	char line_str[length + 1];
 	memset(line_str, chr, length);
 	println(line_str);
 }
