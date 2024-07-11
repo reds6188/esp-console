@@ -27,7 +27,7 @@ typedef enum {
 	ASTERISK,			// ***
 } style_t;
 
-static const line_char[] = {
+static const char line_char[] = {
 	'.', '-', '=', '_', '~', '#', '*'
 };
 
