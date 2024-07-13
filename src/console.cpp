@@ -19,6 +19,21 @@ void Console::line(style_t style, const char * color, uint8_t length) {
 	print(F(LOG_NORM));
 }
 
+void Console::header(style_t style, const char * color, uint8_t length) {
+	int side = (length - strlen(title) - 6) / 2;
+	char chr = line_char[style];
+	char title_line[length + 1] = { };
+	memset(title_line, chr, length);
+	
+	char title_str[strlen(title) + 7] = { };
+	memset(title_str, ' ', strlen(title) + 6);
+	strncpy(title_str + 3, title, strlen(title));
+	strncpy(title_line + side, title_str, strlen(title) + 6);
+	line(style, color, length);
+	print(F(color));
+	println(title_line);
+	line(style, color, length);
+}
 
 void Console::writeTag(const char * tag) {
 	char pad_str[_max_tag_length + 6];

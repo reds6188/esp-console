@@ -38,6 +38,7 @@ class Console : public HardwareSerial {
 		Console(void);
 		void line(style_t style, uint8_t length);
 		void line(style_t style, const char * color, uint8_t length);
+		void header(style_t style, const char * color, uint8_t length);
 		void writeTag(const char * tag);
 		void log(const char * tag, String message);
 		void success(const char * tag, String message);
