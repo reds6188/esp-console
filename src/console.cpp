@@ -8,7 +8,7 @@ Console::Console(void) : HardwareSerial(0) {
 
 void Console::line(style_t style, uint8_t length) {
 	char chr = line_char[style];
-	char line_str[length + 1];
+	char line_str[length + 1] = { };
 	memset(line_str, chr, length);
 	println(line_str);
 }
@@ -19,7 +19,7 @@ void Console::line(style_t style, const char * color, uint8_t length) {
 	print(F(LOG_NORM));
 }
 
-void Console::header(style_t style, const char * color, uint8_t length) {
+void Console::header(style_t style, const char * color, uint8_t length, const char * title) {
 	int side = (length - strlen(title) - 6) / 2;
 	char chr = line_char[style];
 	char title_line[length + 1] = { };

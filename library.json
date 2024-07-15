@@ -1,7 +1,7 @@
 {
 	"name": "esp-console",
 	"keywords": "console, log, esp32",
-	"description": "Console log for ESP32",
+	"description": "Console log library for ESP32",
 	"homepage": "https://github.com/reds6188/esp-console.git",
 	"repository": {
 		"type": "git",
@@ -12,7 +12,7 @@
 		"email": "reds6188@gmail.com",
 		"maintainer": true
 	},
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"frameworks": "arduino",
 	"platforms": "espressif32"
 }
