@@ -73,4 +73,16 @@ void Console::error(const char * tag, String message) {
 	print(F(LOG_NORM));
 }
 
+void Console::data(const char * tag, String message) {
+	print(F(LOG_CYAN));
+	log(tag, message);
+	print(F(LOG_NORM));
+}
+
+void Console::disabled(const char * tag, String message) {
+	print(F(LOG_GRAY));
+	log(tag, message);
+	print(F(LOG_NORM));
+}
+
 Console console;

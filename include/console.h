@@ -13,6 +13,7 @@
 #define LOG_YELW        "\033[1;33m"
 #define LOG_MAGN        "\033[1;35m"
 #define LOG_CYAN        "\033[1;36m"
+#define LOG_GRAY        "\033[1;90m"
 #define LOG_ORNG        "\033[38;5;214m"
 #define LOG_PURP        "\033[38;5;91m"
 
@@ -45,6 +46,8 @@ class Console : public HardwareSerial {
         void info(const char * tag, String message);
         void warning(const char * tag, String message);
         void error(const char * tag, String message);
+		void data(const char * tag, String message);
+		void disabled(const char * tag, String message);
 };
 
 extern Console console;
